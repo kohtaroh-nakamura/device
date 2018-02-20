@@ -6,8 +6,8 @@ Author: Kohtaroh Nakamura
 GitHub: https://github.com/kohtaroh-nakamura/device
 */
 
-var ARGENT = ARGENT || {};
-ARGENT = {
+var DEVICE = DEVICE || {};
+DEVICE = {
   device: {
     isSp: false,
     isIos: false,
@@ -28,31 +28,31 @@ ARGENT = {
   if (ua.indexOf('ipad') != -1 ||
     ua.indexOf('ipod') != -1 ||
     ua.indexOf('iphone') != -1) {
-    ARGENT.device.isSp = true;
-    ARGENT.device.isIos = true;
-    ARGENT.version = serchUa(ua, 'version');
+    DEVICE.device.isSp = true;
+    DEVICE.device.isIos = true;
+    DEVICE.version = serchUa(ua, 'version');
   } else if (ua.indexOf('android') != -1) {
-    ARGENT.device.isSp = true;
-    ARGENT.device.isAndroid = true;
-    ARGENT.version = serchUa(ua, 'chrome');
+    DEVICE.device.isSp = true;
+    DEVICE.device.isAndroid = true;
+    DEVICE.version = serchUa(ua, 'chrome');
   } else {
-    ARGENT.device.isPc = true;
+    DEVICE.device.isPc = true;
     if (ua.indexOf('edge') != -1) {
-      ARGENT.device.isEdge = true;
-      ARGENT.version = serchUa(ua, 'edge');
+      DEVICE.device.isEdge = true;
+      DEVICE.version = serchUa(ua, 'edge');
     } else if (ua.indexOf('trident/7') != -1) {
-      ARGENT.device.isIe11 = true;
+      DEVICE.device.isIe11 = true;
     } else if (ua.indexOf('chrome') != -1) {
-      ARGENT.device.isChrome = true;
-      ARGENT.version = serchUa(ua, 'chrome');
+      DEVICE.device.isChrome = true;
+      DEVICE.version = serchUa(ua, 'chrome');
     } else if (ua.indexOf('safari') != -1) {
-      ARGENT.device.isSafari = true;
-      ARGENT.version = serchUa(ua, 'version');
+      DEVICE.device.isSafari = true;
+      DEVICE.version = serchUa(ua, 'version');
     }
   }
   document.addEventListener('DOMContentLoaded', function() {
-    addClassBody(ARGENT.device);
-    addClassBody(ARGENT.version, 'ver-');
+    addClassBody(DEVICE.device);
+    addClassBody(DEVICE.version, 'ver-');
   });
 
   function serchUa(ua, word) {
