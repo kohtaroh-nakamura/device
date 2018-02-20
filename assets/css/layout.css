@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.js-device {
+  display: none;
+}
+
+body.isPc .only-pc.js-device {
+  display: block;
+}
+
+body.isSp .only-sp.js-device {
+  display: block;
+}
