@@ -11,8 +11,8 @@ bodyタグにブラウザにclassを付与します。
 挿入箇所はheadタグ内やbody閉じタグ直前がオススメです。
 
 ### CSSサンプル
-サンプルとして*.js-device*というclassを設定して出し分けしてみます。
-
+PCのみ表示したいものには「.only-pc」、
+SPのみで表示したいものには「.only-sp」とするサンプルです。
 
     .only-pc,
     .only-sp {
