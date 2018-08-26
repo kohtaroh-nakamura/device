@@ -6,9 +6,9 @@ bodyタグにブラウザにclassを付与します。
 また、JavaScriptのグローバル空間に*DEVICE*オブジェクトを作ります。
 
 ## 使い方
-*device.js*をhtmlで読み込んでください。  
+*device.min.js*をhtmlで読み込んでください。  
 他のライブラリには依存しません。  
-挿入箇所はheadタグ内やbody閉じタグ直前がオススメです。
+挿入箇所はbody開きタグ直後やheadタグ内やがオススメです。
 
 ### CSSサンプル
 PCのみ表示したいものには「.only-pc」、
@@ -64,9 +64,9 @@ Give the browser a class on the body tag.
 Also create a * DEVICE * object in the global space of JavaScript.  
 
 ## How to use
-Please read * device.js * with html.  
+Please load *device.min.js* with html.  
 It does not depend on other libraries.  
-It is recommended to insert in the head tag and body closing tag immediately before inserting.  
+Immediately after opening the body opening tag and within the head tag are recommended for the insertion place.  
 
 ### CSS Sample
 ".Only-pc" for what you want to display PC only,
@@ -106,7 +106,7 @@ For samples that you want to display with only SP, this is a sample to be ".only
 
 ## Example of use
 - Separate elements by device
-- * Automatically select app download button on * Google Play * and * App Store * with Android and iPhone
+- * Automatically select app download button on *Google Play* and *App Store* with Android and iPhone
 - Exception handling of IE 11 in JS
 
 ## Bonus
