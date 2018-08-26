@@ -61,7 +61,7 @@ DEVICEオブジェクトに*version*メンバーが居ますが、versionを判�
 ## Overview
 Determine the UserAgent of the browser,
 Give the browser a class on the body tag.  
-Also create a * DEVICE * object in the global space of JavaScript.  
+Also create a *DEVICE* object in the global space of JavaScript.  
 
 ## How to use
 Please load *device.min.js* with html.  
@@ -106,8 +106,8 @@ For samples that you want to display with only SP, this is a sample to be ".only
 
 ## Example of use
 - Separate elements by device
-- * Automatically select app download button on *Google Play* and *App Store* with Android and iPhone
+- Automatically select app download button on *Google Play* and *App Store* with Android and iPhone
 - Exception handling of IE 11 in JS
 
 ## Bonus
-There are * version * members in the DEVICE object, but since there are many things that can not determine the version, it is lucky to use it for a specific bug.  
+There are *version* members in the DEVICE object, but since there are many things that can not determine the version, it is lucky to use it for a specific bug.  
