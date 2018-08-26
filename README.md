@@ -48,6 +48,60 @@ SPのみで表示したいものには「.only-sp」とするサンプルです�
 - *Google Play*と*App Store*のアプリダウンロードボタンをAndroidとiPhoneで自動的に選択
 - JSでのIE11の例外処理
 
-## おまけ
+## ボーナス
 DEVICEオブジェクトに*version*メンバーが居ますが、versionを判定できないものも多いので、特定のバグに対して使えたらラッキーです。
 
+----
+
+# device.js
+
+## Functional overview
+Determine the UserAgent of the browser,
+Give the browser a class on the body tag.
+Also create a * DEVICE * object in the global space of JavaScript.
+
+## How to use
+Please read * device.js * with html.
+It does not depend on other libraries.
+It is recommended to insert in the head tag and body closing tag immediately before inserting.
+
+### CSS Sample
+".Only-pc" for what you want to display PC only,
+For samples that you want to display with only SP, this is a sample to be ".only-sp".
+
+    .only-pc,
+    .only-sp {
+        display: none;
+    }
+
+    body.isPc .only-pc {
+        display: block;
+    }
+
+    body.isSp .only-sp {
+        display: block;
+    }
+
+### JS sample
+    if (DEVICE.isIe 11) {
+        // for only IE 11
+        alert ('Your browser is IE 11!');
+    }
+
+## class name given, DEVICE object member
+- isSp
+- isIos
+- isAndroid
+- isPc
+- isChrome
+- isIe 11
+- isEdge
+- isSafari
+
+## Example of use
+- Separate elements by device
+- * Automatically select app download button on * Google Play * and * App Store * with Android and iPhone
+- Exception handling of IE 11 in JS
+
+## Bonus
+There are * version * members in the DEVICE object, but since there are many things that can not determine the version, it is lucky to use it for a specific bug.
