@@ -3,8 +3,8 @@ Name: device.js
 Description: Browser checker on JavaScript.
 Version: 0.1.1
 Last Updated: 2018-08-26
+
 Author: Kohtaroh Nakamura
-Copyright: 2018 Kohtaroh Nakamura
 GitHub: https://github.com/kohtaroh-nakamura/device
 License: MIT License.
 http://opensource.org/licenses/mit-license.php
