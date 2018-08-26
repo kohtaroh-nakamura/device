@@ -35,13 +35,16 @@ SPのみで表示したいものには「.only-sp」とするサンプルです�
 
 ## 付与されるclass名、DEVICEオブジェクトメンバー
 - isSp
+- isSP
 - isIos
 - isAndroid
 - isPc
+- isPC
 - isChrome
 - isIe11
 - isEdge
 - isSafari
+- isFirefox
 
 ## 使用例
 - 要素をデバイスごとに出し分け
@@ -55,19 +58,19 @@ DEVICEオブジェクトに*version*メンバーが居ますが、versionを判�
 
 # device.js
 
-## Functional overview
+## Overview
 Determine the UserAgent of the browser,
-Give the browser a class on the body tag.
-Also create a * DEVICE * object in the global space of JavaScript.
+Give the browser a class on the body tag.  
+Also create a * DEVICE * object in the global space of JavaScript.  
 
 ## How to use
-Please read * device.js * with html.
-It does not depend on other libraries.
-It is recommended to insert in the head tag and body closing tag immediately before inserting.
+Please read * device.js * with html.  
+It does not depend on other libraries.  
+It is recommended to insert in the head tag and body closing tag immediately before inserting.  
 
 ### CSS Sample
 ".Only-pc" for what you want to display PC only,
-For samples that you want to display with only SP, this is a sample to be ".only-sp".
+For samples that you want to display with only SP, this is a sample to be ".only-sp".  
 
     .only-pc,
     .only-sp {
@@ -90,13 +93,16 @@ For samples that you want to display with only SP, this is a sample to be ".only
 
 ## class name given, DEVICE object member
 - isSp
+- isSP
 - isIos
 - isAndroid
 - isPc
+- isPC
 - isChrome
-- isIe 11
+- isIe11
 - isEdge
 - isSafari
+- isFirefox
 
 ## Example of use
 - Separate elements by device
@@ -104,4 +110,4 @@ For samples that you want to display with only SP, this is a sample to be ".only
 - Exception handling of IE 11 in JS
 
 ## Bonus
-There are * version * members in the DEVICE object, but since there are many things that can not determine the version, it is lucky to use it for a specific bug.
+There are * version * members in the DEVICE object, but since there are many things that can not determine the version, it is lucky to use it for a specific bug.  
