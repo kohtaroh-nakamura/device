@@ -12,64 +12,64 @@ http://opensource.org/licenses/mit-license.php
 
 var DEVICE = DEVICE || {};
 DEVICE = {
-  device: {
-    isSp: false,
-    isSP: false,
-    isIos: false,
-    isAndroid: false,
-    isPc: false,
-    isPC: false,
-    isChrome: false,
-    isIe11: false,
-    isIE11: false,
-    isEdge: false,
-    isSafari: false,
-    isFirefox: false,
-  },
+  isSp: false,
+  isSP: false,
+  isIos: false,
+  isAndroid: false,
+  isPc: false,
+  isPC: false,
+  isChrome: false,
+  isIe11: false,
+  isIE11: false,
+  isEdge: false,
+  isSafari: false,
+  isFirefox: false,
   version: null,
 };
 
 (function () {
+
   'use strict';
+
   var ua = navigator.userAgent.toLowerCase();
   if (ua.indexOf('ipad') != -1 ||
     ua.indexOf('ipod') != -1 ||
     ua.indexOf('iphone') != -1) {
-    DEVICE.device.isSp = true;
-    DEVICE.device.isSP = true;
-    DEVICE.device.isIos = true;
+    DEVICE.isSp = true;
+    DEVICE.isSP = true;
+    DEVICE.isIos = true;
     DEVICE.version = serchUa(ua, 'version');
   } else if (ua.indexOf('android') != -1) {
-    DEVICE.device.isSp = true;
-    DEVICE.device.isSP = true;
-    DEVICE.device.isAndroid = true;
+    DEVICE.isSp = true;
+    DEVICE.isSP = true;
+    DEVICE.isAndroid = true;
     DEVICE.version = serchUa(ua, 'chrome');
   } else {
-    DEVICE.device.isPc = true;
-    DEVICE.device.isPC = true;
+    DEVICE.isPc = true;
+    DEVICE.isPC = true;
     if (ua.indexOf('edge') != -1) {
-      DEVICE.device.isEdge = true;
+      DEVICE.isEdge = true;
       DEVICE.version = serchUa(ua, 'edge');
     } else if (ua.indexOf('trident/7') != -1) {
-      DEVICE.device.isIe11 = true;
-      DEVICE.device.isIE11 = true;
+      DEVICE.isIe11 = true;
+      DEVICE.isIE11 = true;
     } else if (ua.indexOf('chrome') != -1) {
-      DEVICE.device.isChrome = true;
+      DEVICE.isChrome = true;
       DEVICE.version = serchUa(ua, 'chrome');
     } else if (ua.indexOf('safari') != -1) {
-      DEVICE.device.isSafari = true;
+      DEVICE.isSafari = true;
       DEVICE.version = serchUa(ua, 'version');
     } else if (ua.indexOf('firefox') != -1) {
-      DEVICE.device.isFirefox = true;
+      DEVICE.isFirefox = true;
       DEVICE.version = serchUa(ua, 'firefox');
     }
   }
   if (document.body) {
-    addClassBody(DEVICE.device);
+    addClassBody(DEVICE);
     addClassBody(DEVICE.version, 'ver-');
   } else {
     document.addEventListener('DOMContentLoaded', function () {
-      addClassBody(DEVICE.device);
+      addClassBody(DEVICE);
       addClassBody(DEVICE.version, 'ver-');
     });
   }
@@ -85,7 +85,8 @@ DEVICE = {
     var body = document.getElementsByTagName('body')[0];
     if (typeof (obj) === 'object') {
       for (var key in obj) {
-        if (obj[key]) body.classList.add(key);
+        console.log('key = ', key)
+        if (obj[key] && key !== 'version') body.classList.add(key);
       }
     }
     if (typeof (obj) === 'string') {
