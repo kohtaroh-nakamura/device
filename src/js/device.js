@@ -1,8 +1,8 @@
 /**
 Name: device.js
 Description: Browser checker on JavaScript.
-Version: 0.1.1
-Last Updated: 2018-08-26
+Version: 0.1.2
+Last Updated: 2018-11-11
 
 Author: Kohtaroh Nakamura
 GitHub: https://github.com/kohtaroh-nakamura/device
@@ -85,7 +85,6 @@ DEVICE = {
     var body = document.getElementsByTagName('body')[0];
     if (typeof (obj) === 'object') {
       for (var key in obj) {
-        console.log('key = ', key)
         if (obj[key] && key !== 'version') body.classList.add(key);
       }
     }
