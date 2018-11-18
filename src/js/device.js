@@ -1,11 +1,11 @@
 /**
 Name: device.js
 Description: Browser checker on JavaScript.
-Version: 0.1.2
-Last Updated: 2018-11-11
+Version: 0.1.3
+Last Updated: 2018-11-18
 
 Author: Kohtaroh Nakamura
-GitHub: https://github.com/kohtaroh-nakamura/device
+GitHub: https://github.com/kohtaroh-nakamura/
 License: MIT License.
 http://opensource.org/licenses/mit-license.php
 */
@@ -18,6 +18,8 @@ DEVICE = {
   isAndroid: false,
   isPc: false,
   isPC: false,
+  isTab: false,
+  isTAB: false,
   isChrome: false,
   isIe11: false,
   isIE11: false,
@@ -32,16 +34,25 @@ DEVICE = {
   'use strict';
 
   var ua = navigator.userAgent.toLowerCase();
-  if (ua.indexOf('ipad') != -1 ||
-    ua.indexOf('ipod') != -1 ||
+  if (ua.indexOf('ipod') != -1 ||
     ua.indexOf('iphone') != -1) {
     DEVICE.isSp = true;
     DEVICE.isSP = true;
     DEVICE.isIos = true;
     DEVICE.version = serchUa(ua, 'version');
-  } else if (ua.indexOf('android') != -1) {
+  } else if (ua.indexOf('ipad') != -1) {
+    DEVICE.isTab = true;
+    DEVICE.isTAB = true;
+    DEVICE.isIos = true;
+    DEVICE.version = serchUa(ua, 'version');
+  } else if (ua.indexOf('android') != -1 && ua.indexOf('mobile') != -1) {
     DEVICE.isSp = true;
     DEVICE.isSP = true;
+    DEVICE.isAndroid = true;
+    DEVICE.version = serchUa(ua, 'chrome');
+  } else if (ua.indexOf('android') != -1) {
+    DEVICE.isTab = true;
+    DEVICE.isTAB = true;
     DEVICE.isAndroid = true;
     DEVICE.version = serchUa(ua, 'chrome');
   } else {

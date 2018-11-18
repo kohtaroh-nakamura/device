@@ -3,15 +3,22 @@ body {
   font-size: 10vw;
 }
 
-.only-pc,
-.only-sp {
+
+.only-sp,
+.only-tab,
+.only-pc {
   display: none;
+}
+
+body.isSp .only-sp {
+  display: block;
+}
+
+body.isTab .only-tab {
+  display: block;
 }
 
 body.isPc .only-pc {
   display: block;
 }
 
-body.isSp .only-sp {
-  display: block;
-}
