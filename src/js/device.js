@@ -1,13 +1,11 @@
 /**
 Name: device.js
 Description: Browser checker on JavaScript.
-Version: 0.1.4
-Last Updated: 2018-11-22
-
+Version: 0.1.5
+Last Updated: 2018-11-24
 Author: Kohtaroh Nakamura
 GitHub: https://github.com/kohtaroh-nakamura/
 License: MIT License.
-http://opensource.org/licenses/mit-license.php
 */
 
 var DEVICE = DEVICE || {};
@@ -21,6 +19,12 @@ DEVICE = {
   isTab: false,
   isTAB: false,
   isChrome: false,
+  isMsIe: false,
+  isMEIE: false,
+  isIe9: false,
+  isIE9: false,
+  isIe10: false,
+  isIE10: false,
   isIe11: false,
   isIE11: false,
   isEdge: false,
@@ -61,9 +65,16 @@ DEVICE = {
     if (ua.indexOf('edge') !== -1) {
       DEVICE.isEdge = true;
       DEVICE.version = serchUa(ua, 'edge');
+    } else if (ua.indexOf("msie 10.") != -1) {
+      DEVICE.isIe10 = true;
+      DEVICE.isIE10 = true;
+      DEVICE.isMsIe = true;
+      DEVICE.isMEIE = true;
     } else if (ua.indexOf('trident/7') !== -1) {
       DEVICE.isIe11 = true;
       DEVICE.isIE11 = true;
+      DEVICE.isMsIe = true;
+      DEVICE.isMEIE = true;
     } else if (ua.indexOf('chrome') !== -1) {
       DEVICE.isChrome = true;
       DEVICE.version = serchUa(ua, 'chrome');
