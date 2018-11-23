@@ -41,6 +41,8 @@ SPのみで表示したいものには「.only-sp」とするサンプルです�
 - isPc
 - isPC
 - isChrome
+- isMsIe
+- isIe10
 - isIe11
 - isEdge
 - isSafari
@@ -99,6 +101,8 @@ For samples that you want to display with only SP, this is a sample to be ".only
 - isPc
 - isPC
 - isChrome
+- isMsIe
+- isIe10
 - isIe11
 - isEdge
 - isSafari
